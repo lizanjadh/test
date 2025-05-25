@@ -1472,9 +1472,9 @@ function make_kernel_arw(pktopts_sds, dirty_sd, k100_addr, kernel_addr, sds) {
     log(`reclaim rthdr: ${kmem.read64(w_rthdr_p)}`);
     log(kmem.read64(w_rthdr_p));
     log(`reclaim rthdr: ${kmem.read64(w_rthdr_p)}`);
+
     kmem.write64(r_rthdr_p, 0);
     kmem.write64(w_rthdr_p, 0);
-
     log('corrupt pointers cleaned');
 
     
