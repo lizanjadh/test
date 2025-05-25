@@ -129,6 +129,10 @@ h1 {
 </style>
 
 <script>
+if (window.applicationCache.status=='0'){window.location.replace("cache.html");}
+</script>
+
+<script>
   if (window.applicationCache) {
     window.applicationCache.addEventListener('cached', function() {
       alert("Site cached for offline use!");
