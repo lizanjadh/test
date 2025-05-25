@@ -2,11 +2,12 @@ CACHE MANIFEST
 # v1
 # Generated on 2025-05-23 16:25:13.620337
 
-CACHE:
+CACHE: 
 900.elf
 900.mjs
 alert.mjs
 cache.html
+cache.manifest
 chain.mjs
 config.mjs
 constants.mjs
@@ -27,5 +28,5 @@ send.mjs
 utils.mjs
 view.mjs
 
-NETWORK:
+NETWORK: 
 *
