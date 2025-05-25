@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html manifest="cache.manifest" lang="en">
 <head>
 <title>*PSFree Webkit+Lapse Kernel Exploit PS4 9.00 Firmware*</title>
 <meta charset="UTF-8">
@@ -127,4 +127,17 @@ h1 {
     font-size: 0.9rem;
 }
 </style>
+
+<script>
+  if (window.applicationCache) {
+    window.applicationCache.addEventListener('cached', function() {
+      alert("Site cached for offline use!");
+    }, false);
+
+    window.applicationCache.addEventListener('updateready', function() {
+      alert("Site cache updated — restart your browser to apply.");
+    }, false);
+  }
+</script>
+
 </html>
