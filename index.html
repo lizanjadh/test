@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html manifest="./PSFree.manifest">
+  <head>
+    <script>
+        function DLProgress(e){Percent=(Math.round(e.loaded / e.total * 100));document.title="Installing offline cache: " + Percent + "%";}
+        function DisplayCacheProgress(){setTimeout(function(){;document.title="Cache Success !";},1000);setTimeout(function(){window.location.href = document.referrer;},3000);}window.applicationCache.addEventListener("progress",DLProgress,false);window.applicationCache.oncached=function(e){DisplayCacheProgress();};window.applicationCache.onupdateready=function(e){DisplayCacheProgress();};
+    </script>
+    <meta charset="UTF-8">
+    <title>PSFree | 9.00</title>
+    <link rel='stylesheet' href='./index.css'>
+  </head>
+  <body>
+    
+
+    <div class="header">
+      <img src="./logo.svg" width="50" height="50" ></button>
+     </div>
+    </div>
+    
+<h1>PSFree Webkit + Lapse Kernel Exploit</h1>
+<div class="subtitle">PS4 9.00 Auto Goldhen</div>
+<div class="card">
+<div class="card-title">
+<span style="width:10px; height:10px; border-radius:50%; background:limegreen; box-shadow:0 0 8px limegreen;"></span>
+    
+
+    <h2 id="PS4FW">Firware Compatible</h2>
+
+    <div id="jailbreak-page">
+      <div class="center-btn-wrap">
+        <button id="jailbreak" class="ps-btn" title="PlayStation">
+          <!-- PlayStation SVG logo -->
+          <img src="./logo.png" width="100" height="50"
+        </button>
+        <label>
+
+        </label>
+      </div>
+   
+    </div>
+    
+    <h3>Exploit Console</h3>
+    
+    <div class="console" style="padding: 20px;"><pre id='console'></pre></div>
+
+   
+
+    <script src='./index.js'></script>
+    <script>
+      CheckFW()
+    </script>
+  </body>
+</html>
