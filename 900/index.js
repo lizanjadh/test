@@ -91,7 +91,7 @@ async function jailbreak() {
     if (goldhenModule && typeof goldhenModule.GoldHEN === 'function') {
       goldhenModule.GoldHEN();
     } else {
-      console.error("GoldHEN function not found in GoldHEN.js module");
+      console.error("GoldHEN function not found in goldhen.js module");
     }
   } catch (e) {
     console.error("Failed to jailbreak:", e);
