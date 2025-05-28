@@ -1590,9 +1590,6 @@ async function patch_kernel(kbase, kmem, p_ucred, restore_info) {
 
     mem.cpy(write_addr, patches.addr, patches.size);
     sys_void('kexec', exec_addr, ...restore_info);
-
-    log('setuid(0)');
-    sysi('setuid', 0);
 }
 
 
