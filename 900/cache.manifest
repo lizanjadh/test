@@ -9,6 +9,8 @@ alert.mjs
 chain.mjs
 config.mjs
 constants.mjs
+goldhen.js
+index.css
 index.html
 index.js
 int64.mjs
