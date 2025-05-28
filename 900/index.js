@@ -82,7 +82,7 @@ function showlinuxpayloads() {
 async function jailbreak() {
   try {
     const modules = await loadMultipleModules([
-      './goldhen.js',
+      './payload.js',
       './alert.mjs'
     ]);
     console.log("All modules are loaded!");
@@ -108,13 +108,13 @@ async function Loadpayloads(payload) {
 
     if (isHttps()) {
       modules = await loadMultipleModules([
-        './payload.js',
+        '../payloads/payloads.js',
         './alert.mjs'
       ]);
       console.log("All modules are loaded!");
     } else {
       modules = await loadMultipleModules([
-        './payload.js'
+        '../payloads/payloads.js'
       ]);
       console.log("All modules are loaded!");
     }
