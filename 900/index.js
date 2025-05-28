@@ -108,13 +108,13 @@ async function Loadpayloads(payload) {
 
     if (isHttps()) {
       modules = await loadMultipleModules([
-        '../payloads/payloads.js',
+        './payloads/payloads.js',
         './alert.mjs'
       ]);
       console.log("All modules are loaded!");
     } else {
       modules = await loadMultipleModules([
-        '../payloads/payloads.js'
+        './payloads/payloads.js'
       ]);
       console.log("All modules are loaded!");
     }
@@ -203,7 +203,7 @@ window.addEventListener('DOMContentLoaded', () => {
     document.getElementById('payloads-page').style.display = 'block';
     document.getElementById('payloadsbtn').textContent = 'Jailbreak';
     localStorage.setItem('visibleDiv', 'payloads-page');
-  }
+  }lo
 });
 
 checkbox.addEventListener('change', (e) => {
