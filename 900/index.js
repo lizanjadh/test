@@ -1,4 +1,4 @@
-async function loadMultipleModules(files) {
+-async function loadMultipleModules(files) {
   try {
     // Dynamically import all modules
     const modules = await Promise.all(files.map(file => import(file)));
