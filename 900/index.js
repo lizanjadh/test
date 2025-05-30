@@ -21,7 +21,7 @@ function closeabout() {
 
 function CheckFW() {
   var fwUA = navigator.userAgent.substring(navigator.userAgent.indexOf('5.0 (') + 19, navigator.userAgent.indexOf(') Apple'));
-  var FwUAR = fwUA.replace("playStation 4/","");
+  var FwUAR = fwUA.replace("layStation 4/","");
   if (FwUAR == "9.00") {
     document.getElementById('PS4FW').textContent = `PS4 FW: ${FwUAR} | Compatible`;
     document.getElementById('PS4FW').style.color = 'green';
