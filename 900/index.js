@@ -21,7 +21,7 @@ function closeabout() {
 
 function CheckFW() {
   var fwUA = navigator.userAgent.substring(navigator.userAgent.indexOf('5.0 (') + 19, navigator.userAgent.indexOf(') Apple'));
-  var FwUAR = fwUA.replace("layStation 4/","");
+  var FwUAR = fwUA.replace("playStation 4/","");
   if (FwUAR == "9.00") {
     document.getElementById('PS4FW').textContent = `PS4 FW: ${FwUAR} | Compatible`;
     document.getElementById('PS4FW').style.color = 'green';
@@ -98,6 +98,26 @@ async function jailbreak() {
   }
 }
 
+async function binloader() {
+  try {
+    sessionStorage.setItem('binloader', 1);
+    const modules = await loadMultipleModules([
+      './Jailbreak.js',
+      './alert.mjs'
+    ]);
+    console.log("All modules are loaded!");
+
+    const goldhenModule = modules[0];
+    if (goldhenModule && typeof goldhenModule.runBinLoader === 'function') {
+      goldhenModule.runBinLoader();
+    } else {
+      console.error("GoldHEN function not found in GoldHEN.js module");
+    }
+  } catch (e) {
+    console.error("Failed to jailbreak:", e);
+  }
+}
+
 function isHttps() {
   return window.location.protocol === 'https:';
 }
@@ -105,16 +125,16 @@ function isHttps() {
 async function Loadpayloads(payload) {
   try {
     let modules;
-
+    sessionStorage.removeItem('binloader');
     if (isHttps()) {
       modules = await loadMultipleModules([
-        '../payloads/payloads.js',
-        '../psfree/alert.mjs'
+        './payloads/payloads.js',
+        './alert.mjs'
       ]);
       console.log("All modules are loaded!");
     } else {
       modules = await loadMultipleModules([
-        '../payloads/payloads.js'
+        './payloads/payloads.js'
       ]);
       console.log("All modules are loaded!");
     }
@@ -133,6 +153,11 @@ async function Loadpayloads(payload) {
 document.getElementById('jailbreak').addEventListener('click', () => {
   jailbreak();
 });
+
+document.getElementById('binloader').addEventListener('click', () => {
+  binloader();
+});
+
 
 document.querySelectorAll('button[data-func]').forEach(button => {
   button.addEventListener('click', () => {
