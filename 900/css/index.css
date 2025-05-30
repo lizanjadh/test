@@ -13,19 +13,20 @@ body {
 }
 .header {
     z-index: 2;
-    position: fixed;
-    top: 2%;
-    left: 2%;
+    position: absolute;
+    top: 38px;
+    left: 50%;
+    transform: translateX(-50%);
     width: 100vw;
     display: flex;
-    justify-content: left;
+    justify-content: center;
     pointer-events: none;
 }
 .header-title {
     color: #FFF;
-    font-size: 20px;
+    font-size: 2.6em;
     font-weight: bold;
-    letter-spacing: 2px;
+    letter-spacing: .08em;
     text-shadow: 0px 0px 15px #ffe600;
     background: #6f707433;
     border-radius: 18px;
@@ -48,10 +49,10 @@ body {
 .ps-btn {
     display: flex;
     align-items: center;
+    background: rgb(34, 34, 34);
     justify-content: center;
-    background: rgb(200, 200, 200);
     border-radius: 1000px;
-    box-shadow: 0 0px 32px #008cff, 0 0px 7px #0009;
+    box-shadow: 0 0px 32px #222222, 0 0px 7px #222222;
     width: 136px;
     height: 136px;
     border: none;
@@ -62,10 +63,10 @@ body {
     transition: 0.5s;
 }
 .ps-btn:hover {
-    box-shadow: 0 0px 48px #ffe600,0 0px 10px #000c;
+    box-shadow: 0 0px 48px #222222,0 0px 10px #222222;
     transform: scale(1.07);
     transition: 0.5s;
-    background: rgb(64, 64, 64);
+    background: rgb(34, 34, 34);
 }
 .ps-btn svg:hover {
     transform: scale(1.07);
@@ -75,23 +76,23 @@ body {
 .ps-btn svg {
     width: 67px;
     height: 67px;
-    filter: drop-shadow(0 0px 13px #0282ff33);
-    fill: #008cff;
+    filter: drop-shadow(0 0px 13px #222222);
+    fill: #222222;
     transition: 0.5s;
 }
 #console {
-    color: #FFF;
-    background-color: #6f707433;
+    color: #e9be67;
+    background-color: #0c0b0733;
     border-radius: 18px;
     width: 90%;
     height: 18%;
     margin: 0 auto; /* Center horizontally */
-    border: 1px solid #ffd900; /* Optional: add border for visibility */
+    border: 1px solid #bbb591; /* Optional: add border for visibility */
     padding: 10px; /* Optional: add padding */
     display: flex;
     align-items: center;
     position: absolute;
-    bottom: 20px;
+    bottom: 2px;
     left: 5px;
     right: 5px;
     overflow-y: auto;
@@ -100,8 +101,8 @@ body {
 /* Floating Menu */
 .floating-menu {
     position: fixed;
-    top: 2%;
-    right: 2%;
+    top: 20px;
+    right: 20px;
     z-index: 1000;
     display: flex;
     gap: 10px;
@@ -182,8 +183,27 @@ body {
     background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
     z-index: 999; /* Ensure it is below the popup */
 }
+
+h1 {
+    color: rgb(172, 134, 32);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 10%;
+    left: 5px;
+    right: 5px;
+}
+
+h4 {
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    font-size: 2.5rem;
+}
+
 h3 {
-    color: #FFF;
+    color: #99978d;
     font-size: 1em;
     font-weight: bold;
     letter-spacing: .08em;
@@ -252,7 +272,7 @@ h3 {
     background: transparent;
     border: none;
     color: white;
-    font-size: 15px;
+    font-size: 18px;
     cursor: pointer;
     padding: 8px 16px;
     border-radius: 5px;
@@ -273,7 +293,7 @@ h3 {
 
 }
 #PS4FW {
-    color: white;
+    color: rgb(148, 156, 151);
     display: flex;
     align-items: center;
     justify-content: center;
