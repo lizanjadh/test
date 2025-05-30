@@ -128,13 +128,13 @@ async function Loadpayloads(payload) {
     sessionStorage.removeItem('binloader');
     if (isHttps()) {
       modules = await loadMultipleModules([
-        './payloads/payloads.js',
+        './payloads.js',
         './alert.mjs'
       ]);
       console.log("All modules are loaded!");
     } else {
       modules = await loadMultipleModules([
-        './payloads/payloads.js'
+        './payloads.js'
       ]);
       console.log("All modules are loaded!");
     }
