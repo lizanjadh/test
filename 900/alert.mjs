@@ -29,17 +29,20 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.  */
 addEventListener('unhandledrejection', event => {
     const reason = event.reason;
     alert(
-        'Unhandled rejection\n'
+        'If you see this error, please restart the console and try again.\n\n'
+        + 'Unhandled rejection\n'
         + `${reason}\n`
         + `${reason.sourceURL}:${reason.line}:${reason.column}\n`
         + `${reason.stack}`
+
     );
 });
 
 addEventListener('error', event => {
     const reason = event.error;
     alert(
-        'Unhandled error\n'
+        'If you see this error, please restart the console and try again.\n\n'
+        + 'Unhandled error\n'
         + `${reason}\n`
         + `${reason.sourceURL}:${reason.line}:${reason.column}\n`
         + `${reason.stack}`
