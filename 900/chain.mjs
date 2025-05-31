@@ -554,7 +554,7 @@ function load_fw_specific(version) {
     }
 
     if (0x800 <= value && value <= 0x900) {
-        return import('./900.mjs');
+        return import('../rop/900.mjs');
     }
 
     throw RangeError('firmware not supported');
