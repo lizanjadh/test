@@ -1,7 +1,6 @@
 CACHE MANIFEST 
 # PSFree-Lapse
 
-about.html
 alert.mjs
 cache.html
 config.mjs
@@ -12,7 +11,6 @@ logo.svg
 payload.bin
 PS.jpg
 psfree.mjs
-fonts\LiberationMono-Regular.ttf
 kpatch\900.elf
 module\chain.mjs
 module\constants.mjs
