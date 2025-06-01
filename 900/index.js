@@ -30,3 +30,12 @@ async function jailbreak() {
 document.getElementById('jailbreak').addEventListener('click', () => {
   jailbreak();
 });
+
+document.querySelectorAll('button[data-func]').forEach(button => {
+  button.addEventListener('click', () => {
+    const payload = button.getAttribute('data-func');
+    Loadpayloads(payload);
+  });
+});
+
+}
