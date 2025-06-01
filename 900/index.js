@@ -15,3 +15,7 @@ function jailbreak() {
     console.error("Failed to jailbreak:", e);
   }
 }
+
+document.getElementById('jailbreak').addEventListener('click', () => {
+  jailbreak();
+});
