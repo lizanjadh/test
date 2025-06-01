@@ -1,15 +1,4 @@
-async function loadMultipleModules(files) {
-  try {
-    // Dynamically import all modules
-    const modules = await Promise.all(files.map(file => import(file)));
-    return modules; // array of imported modules
-  } catch (error) {
-    console.error("Error loading modules:", error);
-    throw error;
-  }
-}
-
-async function jailbreak() {
+function jailbreak() {
   try {
     const modules = await loadMultipleModules([
       './alert.mjs'
@@ -26,14 +15,3 @@ async function jailbreak() {
     console.error("Failed to jailbreak:", e);
   }
 }
-
-document.getElementById('jailbreak').addEventListener('click', () => {
-  jailbreak();
-});
-
-document.querySelectorAll('button[data-func]').forEach(button => {
-  button.addEventListener('click', () => {
-    const payload = button.getAttribute('data-func');
-    Loadpayloads(payload);
-  });
-});
