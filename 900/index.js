@@ -37,5 +37,3 @@ document.querySelectorAll('button[data-func]').forEach(button => {
     Loadpayloads(payload);
   });
 });
-
-}
