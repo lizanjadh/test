@@ -1,0 +1,141 @@
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <title>PSFree Webkit + Lapse Kernel Exploit For PS4 9.00</title>
+    <style>
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background: #222222;
+        }
+
+        body {
+            min-height: 100vh;
+            min-width: 100vw;
+            position: relative;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+
+        .header {
+            z-index: 2;
+            position: absolute;
+            top: 38px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            pointer-events: none;
+        }
+
+        .header-title {
+            color: #FFF;
+            font-size: 2.6em;
+            font-weight: bold;
+            letter-spacing: .08em;
+            text-shadow: 0px 0px 15px #ffe600;
+            background: #6f707433;
+            border-radius: 18px;
+            padding: 10px 48px;
+            pointer-events: auto;
+            border: 3px solid #ffd900;
+            /* Optional: add border for visibility */
+
+        }
+
+        #console {
+            color: #e9be67;
+            background-color: #0c0b0733;
+            border-radius: 18px;
+            width: 90%;
+            height: 18%;
+            margin: 0 auto;
+            /* Center horizontally */
+            border: 1px solid #bbb591;
+            /* Optional: add border for visibility */
+            padding: 10px;
+            /* Optional: add padding */
+            display: flex;
+            align-items: center;
+            position: absolute;
+            bottom: 2px;
+            left: 5px;
+            right: 5px;
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+
+        h1 {
+            color: rgb(172, 134, 32);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            top: 20%;
+            left: 5px;
+            right: 5px;
+        }
+
+
+        h3 {
+            color: #99978d;
+            font-size: 1em;
+            font-weight: bold;
+            letter-spacing: .08em;
+            background: #6f707433;
+            border-radius: 18px;
+            padding: 10px;
+            pointer-events: auto;
+            position: absolute;
+            bottom: 25%;
+            align-items: center;
+            display: flex;
+            margin: 0 auto;
+            left: 5%;
+
+        }
+    </style>
+    <script>
+        if (window.applicationCache.status == '0') {
+            window.location.replace("cache.html");
+        }
+    </script>
+</head>
+
+<body>
+
+    <div>
+        <img src="./PS.jpg" width="1366" height="500">
+    </div>
+
+    <div class="header">
+        <div class="header-title"><img src="./logo.svg" width="50" height="50"></div>
+    </div>
+
+    <h1>PSFree Webkit + Lapse Kernel Exploit</h1>
+    <div id="DebugConsole">
+        <h3>Log Console</h3>
+
+        <div class="console" style="padding: 20px;">
+            <pre id='console'></pre>
+        </div>
+    </div>
+</body>
+
+<script>
+    
+    // type='module' src='./alert.mjs'>
+    
+    setTimeout(() => {
+        console.log("¡El script se ejecutó después de 3 segundos!");
+        alert("¡Hola! Este mensaje aparece después de un retraso.");
+    }, 5000);
+</script>
+
+
+
+</html>
