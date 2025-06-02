@@ -3,13 +3,15 @@ CACHE MANIFEST
 # Generated on 2025-05-23 16:25:13.620337
 
 CACHE: 
+
+payloads/disableupdates.bin
+payloads/enableupdates.bin
 900.elf
 900.mjs
 alert.mjs
 chain.mjs
 config.mjs
 constants.mjs
-goldhen.js
 index.css
 index.html
 index.js
@@ -21,7 +23,7 @@ mem.mjs
 memtools.mjs
 offset.mjs
 payload.bin
-payload.js
+payloads.js
 psfree.mjs
 rw.mjs
 send.mjs
