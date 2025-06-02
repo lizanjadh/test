@@ -85,7 +85,7 @@ function Loadpayloadonline(PLfile) {
 // Payloads
 
 export function HEN(){
-    Loadpayloadlocal("./HEN.bin");
+    Loadpayloadlocal("./payloads/HEN/HEN.bin");
 }
 
 // Dumpers
@@ -132,11 +132,11 @@ export function load_DisableASLR(){
 }
 
 export function load_DisableUpdates(){
-    Loadpayloadlocal("./payloads/disableupdates.bin");
+    Loadpayloadlocal("./payloads/Bins/Tools/disableupdates.bin");
 }
 
 export function load_EnableUpdates(){
-    Loadpayloadlocal("./payloads/enableupdates.bin");
+    Loadpayloadlocal("./payloads/Bins/Tools/enableupdates.bin");
 }
 
 export function load_ExitIDU(){

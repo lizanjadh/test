@@ -14,7 +14,7 @@ body {
 .header {
     z-index: 2;
     position: absolute;
-    top: 38px;
+    top: 100px;
     left: 50%;
     transform: translateX(-50%);
     width: 100vw;
@@ -190,7 +190,7 @@ h1 {
     align-items: center;
     justify-content: center;
     position: absolute;
-    top: 10%;
+    top: 25%;
     left: 5px;
     right: 5px;
 }
@@ -223,8 +223,8 @@ h3 {
     color: #FFF;
     background-color: #6f707433;
     border-radius: 18px;
-    width: 80%;
-    height: 20%;
+    width: 90%;
+    height: 10%;
     margin: 0 auto; /* Center horizontally */
     border: 1px solid #ffd900; /* Optional: add border for visibility */
     padding: 10px; /* Optional: add padding */
@@ -233,7 +233,7 @@ h3 {
     gap: 20px;
     overflow-y: auto; /* scroll if buttons overflow vertically */
     position: absolute;
-    top: 40%;
+    top: 2%;
     left: 5px;
     right: 5px;
 }
@@ -246,10 +246,12 @@ h3 {
     color: white;
     cursor: pointer;
     transition: background-color 0.25s ease;
-    width: 200px;
+    width: 100px;
     height: 50px;
     margin: 0 auto; /* center horizontally */
     box-sizing: border-box;
+    top: 400%;
+    
 }
 #button-container button:hover {
     background-color: #b3b000;
