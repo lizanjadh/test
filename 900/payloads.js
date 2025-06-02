@@ -84,6 +84,10 @@ function Loadpayloadonline(PLfile) {
 
 // Payloads
 
+export function HEN(){
+    Loadpayloadlocal("./HEN.bin");
+}
+
 // Dumpers
 
 export function load_AppDumper(){
