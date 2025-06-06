@@ -69,6 +69,26 @@ function showlinuxpayloads() {
   document.getElementById('payloads-tools').style.display = 'none';
 }
 
+for(var i=40; i<=75; i=i+5){
+    var select = document.getElementById("tempC");
+    var option = document.createElement("OPTION");
+	select.options.add(option);
+	option.text = i;
+	option.value = i;
+}
+tempC.value=60;
+
+function load_fanthreshold(){
+msgs.innerHTML="Loading Fan Threshold... Please Wait"
+LoadedMSG = "Fan Threshold Loaded ..."
+PLfile = "fan-threshold"+tempC.value+".bin";
+load_poc();
+}
+
+
+
+
+
 async function jailbreak() {
   try {
     const modules = await loadMultipleModules([
