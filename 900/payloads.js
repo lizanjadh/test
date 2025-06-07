@@ -51,8 +51,10 @@ function Loadpayloadlocal(PLfile){ //Loading Payload via Payload Param.
                             //alert("Payload sent !");
                         }else{
                             //alert('Payload not sent !');
-                            import('./alert.mjs');
-                            Loadpayloadonline(PLfile);
+                            setTimeout(() => {
+                                import('./alert.mjs');
+                                Loadpayloadonline(PLfile);
+                            }, 3000); // 3 seconds delay
                             return;
                         }
                     })
@@ -72,14 +74,13 @@ function Loadpayloadlocal(PLfile){ //Loading Payload via Payload Param.
 // Load Payloads with exploit
 
 function Loadpayloadonline(PLfile) {
-    fetch(PLfile).then(res => {
-        res.arrayBuffer().then(arr => {
-            window.pld = new Uint32Array(arr);
-            setTimeout(() => {
-            window.location.reload();
-            }, 3000); // 3 seconds delay
-        });
-    });   
+    window.payload_path = PLfile;
+    setTimeout(() => {
+        sessionStorage.setItem('jbsuccess', 1);
+        document.getElementById('jailbreak').style.display = 'flex';
+        document.getElementById('loader').style.display = 'none';
+        window.location.reload();
+    }, 3000); // 3 seconds delay
 }
 
 // Payloads
@@ -132,11 +133,11 @@ export function load_DisableASLR(){
 }
 
 export function load_DisableUpdates(){
-    Loadpayloadlocal("./disableupdates.bin");
+    Loadpayloadlocal("./payloads/Bins/Tools/disableupdates.bin");
 }
 
 export function load_EnableUpdates(){
-    Loadpayloadlocal("./enableupdates.bin");
+    Loadpayloadlocal("./payloads/Bins/Tools/enableupdates.bin");
 }
 
 export function load_ExitIDU(){
@@ -276,4 +277,10 @@ export function load_Oysters124(){
 
 export function load_Oysters129(){
     Loadpayloadlocal("./payloads/Bins/RDR2/OystersMenu-1.29-FREE.bin");
+}
+
+// AppCache
+
+export function load_AppCache(){
+    Loadpayloadlocal("./payloads/Bins/Tools/appcache-install.bin");
 }
