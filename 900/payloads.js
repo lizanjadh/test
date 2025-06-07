@@ -132,11 +132,11 @@ export function load_DisableASLR(){
 }
 
 export function load_DisableUpdates(){
-    Loadpayloadlocal("./payloads/Bins/Tools/disableupdates.bin");
+    Loadpayloadlocal("./disableupdates.bin");
 }
 
 export function load_EnableUpdates(){
-    Loadpayloadlocal("./payloads/Bins/Tools/enbaleupdates.bin");
+    Loadpayloadlocal("./enableupdates.bin");
 }
 
 export function load_ExitIDU(){
