@@ -116,13 +116,13 @@ async function Loadpayloads(payload) {
 
     if (isHttps()) {
       modules = await loadMultipleModules([
-        '../payloads/payloads.js',
+        './payloads/payloads.js',
         './alert.mjs'
       ]);
       console.log("All modules are loaded!");
     } else {
       modules = await loadMultipleModules([
-        '../payloads/payloads.js'
+        './payloads/payloads.js'
       ]);
       console.log("All modules are loaded!");
     }
