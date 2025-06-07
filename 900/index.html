@@ -53,10 +53,11 @@
     <pre id='console'>Waiting for user interaction...</pre>
   </div>
 
-  <button class="btn" onmouseover="msgs.innerHTML='Modify PS4 FAN Speed'"
-    onmouseout="msgs.innerHTML='PS4 9.00 FW Host v2.8 by GamerHack'" onclick="load_fanthreshold()"> Fan Threshold
-  </button><select id="tempC"></select>&#176;C
-  <br>
+<br>
+<button class="btn" onmouseover="msgs.innerHTML='Modify PS4 FAN Speed'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v2.8 by GamerHack'" onclick="load_fanthreshold()"> Fan Threshold </button><select id="tempC"></select>&#176;C
+<button class="btn" onmouseover="msgs.innerHTML='Enable System Updates'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v2.8 by GamerHack'" onclick="load_enablebUpdates()"> Enable Updates </button>
+<button class="btn" onmouseover="msgs.innerHTML='Disable System Updates'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v2.8 by GamerHack'" onclick="load_disableUpdates()"> Disable Updates </button>
+<br>
 
   <script>
     function allset() {
