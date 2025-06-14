@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html manifest="./ache.manifest">
+
+<head>
+  <script>
+    function DLProgress(e) { Percent = (Math.round(e.loaded / e.total * 100)); document.title = "Installing offline cache: " + Percent + "%"; }
+    function DisplayCacheProgress() { setTimeout(function () { ; document.title = "Cache Success !"; }, 1000); setTimeout(function () { window.location.href = document.referrer; }, 3000); } window.applicationCache.addEventListener("progress", DLProgress, false); window.applicationCache.oncached = function (e) { DisplayCacheProgress(); }; window.applicationCache.onupdateready = function (e) { DisplayCacheProgress(); };
+  </script>
+  <meta charset="UTF-8">
+  <title>PSFree Webkit + Lapse Kernel Exploit</title>
+  <link rel='stylesheet' href='./index.css'>
+</head>
+
+<body>
+
+
+  <div class="header">
+    <img src="./logo.svg" width="50" height="50"></button>
+  </div>
+  </div>
+
+  <h1>PSFree Webkit + Lapse Kernel Exploit</h1>
+
+  <h2 id="PS4FW">Firware Compatible</h2>
+
+  <div id="jailbreak-page">
+    <div class="center-btn-wrap">
+      <button id="jailbreak" class="ps-btn" title="GoldHen">
+        <!-- PlayStation SVG logo -->
+        <img src="./GoldHen.png" width="100" height="50"></button>
+      <label>
+
+      </label>
+    </div>
+
+  </div>
+
+  <div id="jailbreak-page">
+    <div class="center-btn-wrap2">
+      <button id="jailbreak2" class="ps-btn" title="Hen">
+        <!-- PlayStation SVG logo -->
+        <img src="./Hen.png" width="100" height="50"></button>
+      <label>
+
+      </label>
+    </div>
+
+  </div>
+
+
+  <div class="button-container">
+    <button id="binloader">Bin-Loader</button>
+    <button data-func="load_AppDumper">App-Dumper</button>
+    <button data-func="load_KernelDumper">Kernel-Dumper</button>
+    <button data-func="load_VTXDumper">PS4-Dumper-VTX</button>
+    <button data-func="load_App2USB">App2USB</button>
+    <button data-func="load_DisableUpdates">Disable-Updates</button>
+    <button data-func="load_EnableUpdates">Enable-Updates</button>
+    <button data-func="load_FTP">FTP</button>
+    <button data-func="load_HistoryBlocker">History-Blocker</button>
+    <button data-func="load_KernelClock">Kernel-Clock</button>
+    <button data-func="load_Orbis">Orbis-Toolbox</button>
+    <button data-func="load_PS4Debug">PS4-Debug</button>
+    <button data-func="load_ToDex">ToDex</button>
+    <button data-func="load_ToDev">ToDev</button>
+    <button data-func="load_ToKratos">ToKratos</button>
+    <button data-func="load_ToCex">ToCex</button>
+    <button data-func="load_BackupDB">Backup-DB</button>
+    <button data-func="load_RestoreDB">Restore-DB</button>
+    <button data-func="load_RIFRenamer">RIF-Renamer</button>
+    <button data-func="load_ExitIDU">ExitIDU</button>
+    <button data-func="load_DisableASLR">Disable-ASLR</button>
+    <button data-func="load_ModuleDumper">Module-Dumper</button>
+    <button data-func="load_WebrRTE">WebRTE</button>
+    <button data-func="load_PermanentUART">Permanent-UART</button>
+    <button data-func="load_PUPDecrypt">PUP-Decrypt</button>
+  </div>
+
+  <h3>Exploit Console</h3>
+
+  <div class="console" style="padding: 20px;">
+    <pre id='console'>Waiting for user interaction...</pre>
+  </div>
+
+
+
+  <script src='./index.js'></script>
+  <script>
+    CheckFW()
+  </script>
+</body>
+
+</html>
