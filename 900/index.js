@@ -72,6 +72,7 @@ function showlinuxpayloads() {
 async function jailbreak() {
   try {
     const modules = await loadMultipleModules([
+      './Jailbreak.js',
       './alert.mjs'
     ]);
     console.log("All modules are loaded!");
@@ -90,6 +91,7 @@ async function jailbreak() {
 async function jailbreak2() {
   try {
     const modules = await loadMultipleModules([
+      './Jailbreak.js',
       './alert2.mjs'
     ]);
     console.log("All modules are loaded!");
