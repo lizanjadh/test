@@ -164,7 +164,7 @@ document.getElementById('jailbreak2').addEventListener('click', () => {
 });
 
 document.getElementById('disableupdate').addEventListener('click', () => {
-  jailbreak2();
+  disableupdate();
 });
 
 document.querySelectorAll('button[data-func]').forEach(button => {
