@@ -76,12 +76,26 @@ async function jailbreak() {
       './alert.mjs'
     ]);
     console.log("All modules are loaded!");
+    const JailbreakModule = modules[0];
 
-    const goldhenModule = modules[0];
-    if (goldhenModule && typeof goldhenModule.GoldHEN === 'function') {
-      goldhenModule.GoldHEN();
+    if (localStorage.getItem('HEN')) {
+      if (JailbreakModule && typeof JailbreakModule.HEN === 'function') {
+          JailbreakModule.HEN();
+      } else {
+          console.error("HEN function not found in Jailbreak.js module");
+      }
+    } else if (localStorage.getItem('GoldHEN')) {
+      if (JailbreakModule && typeof JailbreakModule.GoldHEN === 'function') {
+          JailbreakModule.GoldHEN();
+      } else {
+          console.error("GoldHEN function not found in Jailbreak.js module");
+      }
     } else {
-      console.error("GoldHEN function not found in goldhen.js module");
+      if (JailbreakModule && typeof JailbreakModule.GoldHEN === 'function') {
+          JailbreakModule.GoldHEN();
+      } else {
+          console.error("GoldHEN function not found in Jailbreak.js module");
+      }
     }
   } catch (e) {
     console.error("Failed to jailbreak:", e);
@@ -92,21 +106,34 @@ async function jailbreak2() {
   try {
     const modules = await loadMultipleModules([
       './Jailbreak.js',
-      './alert2.mjs'
+      './alert.mjs'
     ]);
     console.log("All modules are loaded!");
+    const JailbreakModule = modules[0];
 
-    const goldhenModule = modules[0];
-    if (goldhenModule && typeof goldhenModule.GoldHEN === 'function') {
-      goldhenModule.GoldHEN();
+    if (localStorage.getItem('HEN')) {
+      if (JailbreakModule && typeof JailbreakModule.HEN === 'function') {
+          JailbreakModule.HEN();
+      } else {
+          console.error("HEN function not found in Jailbreak.js module");
+      }
+    } else if (localStorage.getItem('GoldHEN')) {
+      if (JailbreakModule && typeof JailbreakModule.GoldHEN === 'function') {
+          JailbreakModule.GoldHEN();
+      } else {
+          console.error("GoldHEN function not found in Jailbreak.js module");
+      }
     } else {
-      console.error("GoldHEN function not found in goldhen.js module");
+      if (JailbreakModule && typeof JailbreakModule.GoldHEN === 'function') {
+          JailbreakModule.GoldHEN();
+      } else {
+          console.error("GoldHEN function not found in Jailbreak.js module");
+      }
     }
   } catch (e) {
     console.error("Failed to jailbreak:", e);
   }
 }
-
 
 function isHttps() {
   return window.location.protocol === 'https:';
