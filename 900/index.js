@@ -108,7 +108,7 @@ async function jailbreak2() {
 async function disableupdate() {
   try {
     const modules = await loadMultipleModules([
-      './alert2.mjs'
+      './alert3.mjs'
     ]);
     console.log("All modules are loaded!");
 
