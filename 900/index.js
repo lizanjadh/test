@@ -114,7 +114,7 @@ async function binloader() {
   try {
     sessionStorage.setItem('binloader', 1);
     const modules = await loadMultipleModules([
-      './payloads/Jailbreak.js',
+      './Jailbreak.js',
       './alert.mjs'
     ]);
     console.log("All modules are loaded!");
