@@ -225,6 +225,12 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+    if (checkbox.checked) {
+    if (confirm('The jailbreak is going to start please confirm !\nWARNING :\nThis option make the jailbreak unstable and this option is not recommended please use the jailbreak button instead !')) {
+      disableupdate();
+    }
+  }
+
   const visibleDiv = localStorage.getItem('visibleDiv') || 'jailbreak-page';
   if (visibleDiv === 'jailbreak-page') {
     document.getElementById('jailbreak-page').style.display = 'block';
