@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html manifest="./ache.manifest">
+
+<head>
+  <script>
+    function DLProgress(e) { Percent = (Math.round(e.loaded / e.total * 100)); document.title = "Installing offline cache: " + Percent + "%"; }
+    function DisplayCacheProgress() { setTimeout(function () { ; document.title = "Cache Success !"; }, 1000); setTimeout(function () { window.location.href = document.referrer; }, 3000); } window.applicationCache.addEventListener("progress", DLProgress, false); window.applicationCache.oncached = function (e) { DisplayCacheProgress(); }; window.applicationCache.onupdateready = function (e) { DisplayCacheProgress(); };
+  </script>
+  <meta charset="UTF-8">
+  <title>PSFree Webkit + Lapse Kernel Exploit</title>
+  <link rel='stylesheet' href='./index.css'>
+</head>
+
+<body>
+
+  <h1 id=progress style='font-size:25px;text-align:center;text-shadow: 4px 4px 4px black;color:yellow;'></h1><br>
+  <div id="loader" class="loader"></div>
+  <div id="allset" class="info" style="display:none;">Liberacion completada. Cierra el Navegador!</div>
+
+  <div class="header">
+    <img src="./logo.svg" width="50" height="50"></button>
+  </div>
+  </div>
+
+  <h1>PSFree Webkit + Lapse Kernel Exploit</h1>
+
+  <h3>Exploit Console</h3>
+
+  <div class="console" style="padding: 20px;">
+    <pre id='console'>Waiting for user interaction...</pre>
+  </div>
+
+  <script src='./alert.mjs'></script>
+</body>
+
+</html>
